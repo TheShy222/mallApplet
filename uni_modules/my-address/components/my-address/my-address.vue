@@ -20,9 +20,8 @@
         <view class="row2-right">{{addstr}}</view>
       </view>
     </view>
-  </view>
-  <!-- 底部的边框线 -->
-  <image src="/static/cart_border@2x.png" class="address-border"></image>
+    <!-- 底部的边框线 -->
+    <image src="/static/line.png" class="address-border" style="width: 100%;height: 10px;"></image>
   </view>
 </template>
 <script>
@@ -72,10 +71,8 @@
 
         // 3.2 如果弹框异常，则直接退出
         if (err2) return
-
         // 3.3 如果用户点击了 “取消” 按钮，则提示用户 “您取消了地址授权！”
         if (confirmResult.cancel) return uni.$showMsg('您取消了地址授权！')
-
         // 3.4 如果用户点击了 “确认” 按钮，则调用 uni.openSetting() 方法进入授权页面，让用户重新进行授权
         if (confirmResult.confirm) return uni.openSetting({
           // 3.4.1 授权结束，需要对授权的结果做进一步判断
@@ -90,14 +87,7 @@
     }
   }
 </script>
-<style lang=scss"">
-  // 底部边框线的样式
-  .address-border {
-    display: block;
-    width: 100%;
-    height: 5px;
-  }
-
+<style lang="scss">
   // 选择收货地址的盒子
   .address-choose-box {
     height: 90px;
@@ -115,7 +105,6 @@
     justify-content: center;
     padding: 0 5px;
 
-    // 第一行
     .row1 {
       display: flex;
       justify-content: space-between;
